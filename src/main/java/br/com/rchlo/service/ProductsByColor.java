@@ -8,7 +8,7 @@ import br.com.rchlo.domain.Color;
 import br.com.rchlo.domain.Product;
 
 public class ProductsByColor {
-	public List<Product> filter(Color color, List<Product> products) {
+	public List<Product> filter(List<Product> products, Color color) {
 		if(color == null) {
 			throw new NullPointerException("Parâmetro 'color' é null");
 		}

@@ -16,13 +16,18 @@ public class ProductsByEffectivePriceRange {
         List<Product> filteredList = new ArrayList<>();
 
         for (Product product : list) {
-           BigDecimal finalPrice = product.getDiscount(); // nao funciona??
+           BigDecimal finalPrice =  getFinalPrice(product);
            if(finalPrice.compareTo(minimumPrice) >= 0 && finalPrice.compareTo(maximumPrice) <= 0) {
         	   filteredList.add(product);
            }
         }
 
         return filteredList;
+    }
+    private BigDecimal getFinalPrice(Product product) {
+    	BigDecimal productDiscount = product.getDiscount();
+    	BigDecimal productPrice = product.getPrice();
+    	return productDiscount != null ? productPrice.subtract(productDiscount) : productPrice;
     }
 
 }

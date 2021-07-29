@@ -12,7 +12,7 @@ public class ProductsByCode {
 
         List<Product> filteredProducts = new ArrayList<>();
         for (Product product : products) {
-            if (code == product.getCode()) {
+            if (code.equals(product.getCode())) {
                 filteredProducts.add(product);
             }
         }

@@ -9,7 +9,6 @@ import br.com.rchlo.service.ProductsByColor;
 
 public class ProductsByColorMain {
 	public static void main(String[] args) {
-		   // Referencia a lista que guarda todos os produtos cadastrados
 		   ProductsByColor productsByColor = new ProductsByColor();
 	        List<Product> allProducts = ProductRepository.all();
 
